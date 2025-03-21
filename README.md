@@ -26,18 +26,6 @@ This project involves:
 
 ---
 
-## 🛠️ Important Links & Tools:
-
-Everything is for Free!
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
-- **[MYSQL](https://www.mysql.com/downloads/):** Lightweight server for hosting your SQL database.
-- **[SQL workbench](https://dev.mysql.com/downloads/workbench/):** GUI for managing and interacting with databases.
-- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
-- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
-- **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
-- **[Notion Project Steps](https://www.notion.so/Data-Warehouse-Project-1bbc2588a0ad805391e1fce5af284484):** Access to All Project Phases and Tasks.
-
----
 
 ## 🚀 Project Requirements
 
@@ -64,8 +52,6 @@ Develop SQL-based analytics to deliver detailed insights into:
 - **Sales Trends**
 
 These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
-
-For more details, refer to [docs/requirements.md](docs/requirements.md).
 
 ## 📂 Repository Structure
 ```
