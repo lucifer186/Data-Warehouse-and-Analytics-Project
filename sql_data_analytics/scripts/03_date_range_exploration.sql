@@ -12,16 +12,24 @@ SQL Functions Used:
 */
 
 -- Determine the first and last order date and the total duration in months
-SELECT 
-    MIN(order_date) AS first_order_date,
-    MAX(order_date) AS last_order_date,
-    DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) AS order_range_months
-FROM gold.fact_sales;
+SELECT
+    c.customer_key,
+    SUM(f.sales_amount) AS total_spending,
+    MIN(f.order_date) AS first_order,
+    MAX(f.order_date) AS last_order,
+    TIMESTAMPDIFF(MONTH, MIN(f.order_date), MAX(f.order_date)) AS lifespan
+FROM
+    gold.fact_sales f
+LEFT JOIN
+    gold.dim_customers c ON f.customer_key = c.customer_key
+GROUP BY
+    c.customer_key;
 
 -- Find the youngest and oldest customer based on birthdate
 SELECT
     MIN(birthdate) AS oldest_birthdate,
-    DATEDIFF(YEAR, MIN(birthdate), GETDATE()) AS oldest_age,
+    TIMESTAMPDIFF(YEAR, MIN(birthdate), current_timestamp()) AS oldest_age,
     MAX(birthdate) AS youngest_birthdate,
-    DATEDIFF(YEAR, MAX(birthdate), GETDATE()) AS youngest_age
+    TIMESTAMPDIFF(YEAR, MAX(birthdate), current_timestamp()) AS youngest_age
 FROM gold.dim_customers;
+
